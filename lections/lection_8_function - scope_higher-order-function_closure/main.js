@@ -16,7 +16,7 @@ console.log('Lection_8');
 
 
 //     // f.LE = { a: 46, b: 67, c: 34, d: 10 }, f.scope = window = Global scope
-//     // console.log(a, b, c, d, example); // Reference Error: example is not defined.
+//     console.log(a, b, c, d, example); // Reference Error: example is not defined.
 // }
 
 // f(46, 67, 34);
