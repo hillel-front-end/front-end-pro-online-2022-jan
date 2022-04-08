@@ -1,0 +1,29 @@
+div.container {
+    color: black;
+    height: 200px;
+}
+
+.container {
+    width: 550px;
+    height: 150px;
+    padding: 20px;
+    margin: 15px;
+
+    border: 2px solid black;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.right {
+    width: 100%;
+
+    border: 2px solid red;
+}
+
+.right.active {
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-color: aqua;
+}
