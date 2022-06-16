@@ -5,25 +5,21 @@ const DataService = require('./services/DataService');
 
 const usersDataPath = 'lections/lection_27_Telegram_Bot/users.json';
 
-BotService.bot.onText(/\/reportToAll/, (msg) => {
+BotService.bot.onText(/\/reportToAll/, async (msg) => {
     const userID = msg.from.id;
     const isAdmin = [261745929].includes(userID)
 
     if (!isAdmin) return;
 
 
-    FileService
-        .readFile(usersDataPath)
-        .then((data) => {
-            for (let userID in data) {
-                BotService.sendMessage(userID, JSON.stringify(data[userID].history))
+    const data = await FileService.readFile(usersDataPath);
+    
+    for (let userID in data) {
+        BotService.sendMessage(userID, JSON.stringify(data[userID].history))
 
-                WeatherService.load()
-                    .then(weather => {
-                        BotService.sendMessage(userID, JSON.stringify(weather, null, '\t'));
-                    })
-            }
-        });
+        const weather = await WeatherService.load()
+        BotService.sendMessage(userID, JSON.stringify(weather, null, '\t'));
+    }
 });
 
 BotService.bot.onText(/\/deleteMsg/, (msg) => {
@@ -84,7 +80,17 @@ BotService.bot.on('message', (msg) => {
 fetch('https://balba.com/value', {
     method: 'POST',
     body: JSON.stringify({x: 10, y: 20})
-});
+})
+.then(resp => resp.json())
+.then(data => console.log(data));
+
+async function fetchWrapper() {
+    const resp = await fetch('https://balba.com/value');
+    const data = await resp.json();
+
+    console.log(data);
+}
+
 
 // <input name="test" value="iop" />
 // ?test=iop
