@@ -40,3 +40,6 @@
 
 <!-- Перезапись коммита -->
 * `git commit --amend`
+
+
+<!-- vim editor / commands -->
