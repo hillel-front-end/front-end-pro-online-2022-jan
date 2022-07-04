@@ -84,5 +84,9 @@
 
 <!-- Rebase, -i -->
 
+* `git rebase <branch-name>`
+
+* `git rebase <branch-name>`
+
 
 <!-- Push, Pull, Origin, PR, github... -->
