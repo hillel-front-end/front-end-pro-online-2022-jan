@@ -60,7 +60,29 @@
 <!-- Branch -->
 
 * `git branch`
-
 * `git branch <branch-name>`
-
 * `git checkout <branch-name>`
+
+<!-- create branch and checkout -->
+* `git checkout -b <branch-name>`
+
+
+<!-- Merge with/without --no-ff -->
+
+<!-- 
+Возможны 2 режима:
+1) Если существуют коммиты в обоих ветках - слияние через Merge коммит
+2) Если в target ветке небыло изменений по сравнению с merge веткой,
+то произойдет перемотка (fast-forward) на merge ветку
+ -->
+* `git merge <branch-name>`
+
+
+<!-- Слияние через создание Merge коммита -->
+* `git merge --no-ff <branch-name>`
+
+
+<!-- Rebase, -i -->
+
+
+<!-- Push, Pull, Origin, PR, github... -->
