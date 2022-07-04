@@ -98,6 +98,12 @@ Commands:
 
 <!-- Push, Pull, Origin, PR, github... -->
 
+* `git remote add origin <path>`
+
+* `git push origin <branch-name>`
+
+<!-- const origin = '<path>' -->
+
 
 
 
