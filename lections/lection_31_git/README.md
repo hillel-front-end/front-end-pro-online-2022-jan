@@ -101,6 +101,9 @@ Commands:
 * `git remote add origin <path>`
 
 * `git push origin <branch-name>`
+* `git pull origin <branch-name>`
+
+<!-- Push and Pull with --force -->
 
 <!-- const origin = '<path>' -->
 
