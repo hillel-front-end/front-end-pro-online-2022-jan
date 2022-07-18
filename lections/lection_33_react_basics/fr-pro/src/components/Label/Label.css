@@ -1,0 +1,22 @@
+.Label {
+    border: 2px solid black;
+    padding: 5px 15px;
+    margin: 15px;
+
+    border-radius: 10px;
+}
+
+.Label.red {
+    background-color: red;
+    color: white;
+}
+
+.Label.green {
+    background-color: green;
+    color: white;
+}
+
+.Label.yellow {
+    background-color: yellow;
+    color: black;
+}

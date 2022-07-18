@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <script>console.log(ReactDOM)</script>
+    <div id="root"></div>
+    <script>
+        // JSX - Element
+        // function getGreeting(user) {
+        //     if (user) {
+        //         return <h1>Hello, {formatName(user)}!</h1>;
+        //     }
+        //     return <h1>Hello, Stranger.</h1>;
+        // }
+
+
+        // React - Component (only function)
+        // Properties -> props
+        // Functional components
+        function Button(props) {
+            return `Ok! ${props.id}`;
+        }
+
+        const List = () => {}
+        
+        // Class components
+        // React - State Intro
+        class ListItem {
+            state = {
+                x: 10
+            }
+
+            constructor() {
+                setInterval(() => {
+                    state.x++
+                }, 1000)
+            }
+
+            render() {
+                return `Ok! ${this.props.id} ${x}`;
+            }
+        }
+
+     
+
+    </script>
+
+    <script>
+        const rootElem = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElem);
+        // root.render(`Hi!`);
+        root.render(Button({ id: 56 }));
+    </script>
+</body>
+</html>
