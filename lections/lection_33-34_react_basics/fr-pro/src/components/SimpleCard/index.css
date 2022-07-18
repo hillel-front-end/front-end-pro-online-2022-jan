@@ -1,0 +1,20 @@
+.simple-card {
+    width: 250px;
+    background-color: blanchedalmond;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.style-red {
+    border: 2px solid red;
+}
+
+.style-yellow {
+    border: 2px solid yellow;
+}
+
+.style-blue {
+    border: 2px solid blue;
+}
