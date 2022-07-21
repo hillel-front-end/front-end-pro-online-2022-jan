@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+/*
+ Условный рендеринг, Списки и ключи
+ Подъём состояния
+ Композиция
+*/
+
 const WeatherComponent = (props) => {
     const { coords } = props;
     const [maxTemp, setMaxTemp] = useState(null);

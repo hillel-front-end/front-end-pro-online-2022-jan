@@ -6,6 +6,7 @@ import { superLongFunc } from './AppHelper.js'
 import SimpleCard from './components/SimpleCard';
 import HugeCard from './components/HugeCard';
 import InputField from './components/InputField';
+import SpecialCard from './components/SpecialCard';
 
 
 // // Functional component - no state
@@ -104,13 +105,15 @@ class App extends React.Component {
            />
            <hr />
            <div className="card-container">
-              {/* <SimpleCard color="red" width="120" onClick={onSimpleCardClick} />
+              <SimpleCard color="red" width="120" onClick={onSimpleCardClick} />
               <SimpleCard color="yellow" width="120" onClick={onSimpleCardClick} />
-              <SimpleCard color="blue" width="120" onClick={onSimpleCardClick} /> */}
+              <SimpleCard color="blue" width="120" onClick={onSimpleCardClick} />
            </div>
            <hr />
-           {/* {this.state.hugeVisible && <HugeCard value={156} />} */}
+           {this.state.hugeVisible && <HugeCard value={156} />}
            <InputField />
+           <hr /> */}
+           {/* <SpecialCard /> */}
       </div>
     )
   }
