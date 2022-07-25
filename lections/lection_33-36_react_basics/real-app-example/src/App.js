@@ -9,6 +9,13 @@ function App() {
   const [forecastTemp, setForecastTemp] = useState(0);
   const [currentTemp, setCurrentTemp] = useState(0);
 
+  const [val, setVal] = useState(3);
+  useEffect(() => {
+      setTimeout(() => {
+          setVal(7)
+      }, 2000);
+  }, []);
+
   const onTempUpdate = useCallback((temp) => {
     setForecastTemp(temp);
   }, [])
@@ -30,6 +37,7 @@ function App() {
       Forecast Temp: {forecastTemp}
       {' '}
       Current Temp: {currentTemp}
+      {val}
     </div>
   );
 }
