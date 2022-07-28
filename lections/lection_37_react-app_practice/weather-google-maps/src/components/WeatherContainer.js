@@ -6,6 +6,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import PropTypes from 'prop-types';
 
 // CSS in JS
 const AccordionStyles = {
@@ -54,6 +55,15 @@ const WeatherContainer = (props) => {
             <Switch />
         </div>
     );
+}
+
+
+WeatherContainer.propTypes = {
+    value: PropTypes.number,
+    position: PropTypes.exact({
+        lat: PropTypes.number.isRequired,
+        lng: PropTypes.number.isRequired
+    })
 }
 
 export default WeatherContainer;

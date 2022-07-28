@@ -10,10 +10,10 @@ const WeatherTransportWrapper = () => {
     }, []);
 
     return (
-        <>
+        <div style={{ display: 'flex' }}>
             <GoogleMapRoot onMarkerPositionUpdate={onMarkerPositionUpdate} />
             <WeatherContainer position={currentMarkerPosition}/>
-        </>
+        </div>
     );
 }
 

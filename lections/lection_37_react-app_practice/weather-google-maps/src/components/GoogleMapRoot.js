@@ -1,9 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { ModalContext } from '../App';
+import { Button } from '@mui/material';
 
 const containerStyle = {
-  width: '800px',
-  height: '600px'
+  width: '300px',
+  height: '200px'
 };
 
 const center = {
@@ -11,7 +13,7 @@ const center = {
   lng: 30.29020854281413
 };
 
-function GoogleMapRoot(props) {
+const GoogleMapRoot = (props) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
@@ -20,10 +22,12 @@ function GoogleMapRoot(props) {
   const [map, setMap] = React.useState(null)
   const [marker, setMarker] = useState(null);
 
+  const modalContext = useContext(ModalContext);
+
   const onClick = useCallback((event) => {
     const newPosition = {
       lat: event.latLng.lat(),
-      lng: event.latLng.lng()
+      lng: event.latLng.lng(),
   };
     setMarker({
         position: newPosition
@@ -38,6 +42,15 @@ function GoogleMapRoot(props) {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
+
+  const onMarkerClick = useCallback(() => {
+    modalContext.showModal({
+      title: 'Current marker',
+      description: 'some text example',
+      children: <Button>WHAAAT</Button>
+      // closeButtonEnabled: false,
+    });
+  }, []);
 
 //   useEffect(() => {
 //     setTimeout(() => {
@@ -60,7 +73,7 @@ function GoogleMapRoot(props) {
         onClick={onClick}
       >
          {/* {markerContainer} */}
-         {marker && marker.position && <Marker position={marker.position} />}
+         {marker && marker.position && <Marker onClick={onMarkerClick} position={marker.position} />}
         <></>
       </GoogleMap>
   ) : <></>
