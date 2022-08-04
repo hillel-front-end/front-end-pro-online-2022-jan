@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import WeatherService from "../services/WeatherService";
 import Button from '@mui/material/Button';
 import { Accordion, Switch } from "@mui/material";
@@ -20,6 +20,7 @@ const AccordionStyles = {
 
 const WeatherContainer = (props) => {
     const [weather, setWeather] = useState(null)
+
     useEffect(() => {
         if (!props.position) return;
 
