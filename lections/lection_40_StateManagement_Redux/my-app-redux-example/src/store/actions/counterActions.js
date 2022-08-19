@@ -1,9 +1,9 @@
 export const decrementAction = {
-    type: 'counter/decrement-counter',
-    update: -1,
+    type: 'counter/decrement',
 }
 
 export const incrementAction = {
-    type: 'counter/increment-counter',
-    update: 1,
+    type: 'counter/increment',
+    payload: 890,
+    someVal: [1,2, false]
 }

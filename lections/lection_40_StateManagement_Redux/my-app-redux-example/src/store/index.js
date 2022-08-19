@@ -1,5 +1,6 @@
-import { createStore } from "redux";
-import reducers from "./reducers";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import { handler, reportMiddleware } from "./middlewares";
+import combinedReducers from "./reducers";
 
 const initialStore = { 
     counter: 0, 
@@ -13,8 +14,36 @@ const initialStore = {
     }
 };
 
+
+// applyMiddleware
+// combineReducers
+
+// redux-devtools
+
+// useSelector
+// useDispatch
+// useStore
+
+
+
+
+// function configureStore() {
+//     return createStore(reducers, initialStore, applyMiddleware(handler, reportMiddleware));
+// }
+
+// ----------------------------------------
+// combineReducers
+
 function configureStore() {
-    return createStore(reducers, initialStore);
+    return createStore(
+        combinedReducers, 
+        {
+            // ages: [],
+            counter: -10,
+            x: 20
+        },
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        );
 }
 
 export default configureStore;
